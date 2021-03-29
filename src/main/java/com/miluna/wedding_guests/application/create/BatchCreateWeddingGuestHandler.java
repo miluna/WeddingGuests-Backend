@@ -12,7 +12,7 @@ import com.miluna.wedding_guests.domain.WeddingGuestTelephone;
 import java.util.List;
 import java.util.UUID;
 
-public class BatchCreateWeddingGuestHandler implements RequestHandler<List<BatchCreateWeddingGuestRequest>, LambdaResponse> {
+public class BatchCreateWeddingGuestHandler implements RequestHandler<List<CreateWeddingGuestRequest>, LambdaResponse> {
 
     private final WeddingGuestCreator creator;
 
@@ -21,7 +21,7 @@ public class BatchCreateWeddingGuestHandler implements RequestHandler<List<Batch
     }
 
     @Override
-    public LambdaResponse handleRequest(List<BatchCreateWeddingGuestRequest> request, Context context) {
+    public LambdaResponse handleRequest(List<CreateWeddingGuestRequest> request, Context context) {
         request.forEach(g -> {
             creator.create(
                     new WeddingGuestId(UUID.randomUUID().toString()),

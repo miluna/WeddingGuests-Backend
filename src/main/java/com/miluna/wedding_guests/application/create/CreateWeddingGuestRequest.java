@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class BatchCreateWeddingGuestRequest {
+public class CreateWeddingGuestRequest {
     private String name;
     private String email;
     private String telephone;
